@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://clv2d8q5xo11o"]
+
+[ext_resource type="Script" uid="uid://dnjgtffhds56y" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://d13405tuiehs7" path="res://assets/temp.PNG" id="2_qhqgy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rid7q"]
+radius = 103.43
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cqrfi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qhqgy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1314964327]
+script = ExtResource("1_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1165749105]
+shape = SubResource("CircleShape2D_rid7q")
+
+[node name="Panel" type="Panel" parent="." unique_id=552275584]
+offset_left = -99.0
+offset_top = -92.0
+offset_right = 103.0
+offset_bottom = 107.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1165952257]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This...This is a player."
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=946029208]
+position = Vector2(0, 22)
+scale = Vector2(0.16375, 0.15517856)
+sprite_frames = SubResource("SpriteFrames_cqrfi")
