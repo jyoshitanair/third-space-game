@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://crn76dhx00pov" path="res://scripts/level.gd" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://b026ky0nyq225" path="res://scenes/tile1.tscn" id="2_w8frs"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqrfi"]
+size = Vector2(194, 62)
+
 [node name="Level_1" type="Node2D" unique_id=883058062]
 script = ExtResource("1_w7c3h")
 
@@ -13,7 +16,13 @@ script = ExtResource("1_w7c3h")
 [node name="spawn" type="Marker2D" parent="." unique_id=166996118]
 position = Vector2(100, 200)
 
-[node name="end" type="Marker2D" parent="." unique_id=300662698]
+[node name="end" type="Area2D" parent="." unique_id=1763652186]
 position = Vector2(1925, 401)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="end" unique_id=1999735837]
+position = Vector2(18, -18)
+shape = SubResource("RectangleShape2D_cqrfi")
+
 [node name="Tiles" parent="." unique_id=955182349 instance=ExtResource("2_w8frs")]
+
+[connection signal="body_entered" from="end" to="." method="_on_end_body_entered"]

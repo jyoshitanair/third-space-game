@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://ctjyr4o2gp3g"]
 
+[ext_resource type="PackedScene" uid="uid://b026ky0nyq225" path="res://scenes/tile1.tscn" id="1_d6fun"]
+
 [node name="Level2" type="Node2D" unique_id=1110251530]
+
+[node name="Tiles" parent="." unique_id=955182349 instance=ExtResource("1_d6fun")]
+
+[node name="spawn" type="Marker2D" parent="." unique_id=1445282643]
+position = Vector2(619, 348)
