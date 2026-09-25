@@ -1,5 +1,5 @@
 extends Node2D
-var level = 1
+
 var end = 2
 var player = preload("res://scenes/player.tscn")
 @onready var spawn: Marker2D = $spawn
@@ -15,8 +15,11 @@ func _process(delta: float) -> void:
 	pass
 
 func _change_level() -> void: 
-	if level >= end:
-		get_tree().change_scene_to_file("main");
+	if Manager.level >= end:
+		queue_free()
 	else:
-		var new_level = "Level_%d"%level
-		get_tree().change_scene_to_file(new_level);
+		var new_path = "res://scenes/level%d.tscn"%Manager.level
+		get_tree().current_scene.add_child(new_path)
+func _on_end_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		_change_level()
