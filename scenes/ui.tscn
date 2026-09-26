@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dl5l2wyyjhgee"]
+
+[ext_resource type="Script" uid="uid://dnu3pjk7j8g5g" path="res://scripts/ui.gd" id="1_nt7q6"]
+
+[node name="canvas" type="CanvasLayer" unique_id=793607722]
+
+[node name="Control" type="Control" parent="." unique_id=1321089996]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="ProgressBar" parent="Control" unique_id=268280461]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 19.0
+offset_right = 214.0
+offset_bottom = 59.0
+script = ExtResource("1_nt7q6")

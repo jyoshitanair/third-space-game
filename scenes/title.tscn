@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://djgta5hwejamq"]
+
+[ext_resource type="Script" uid="uid://1ddp2sfjob5" path="res://scripts/title.gd" id="1_4ignj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqrfi"]
+bg_color = Color(0.93549204, 0.8957196, 0.99450606, 0.6431373)
+
+[node name="Title" type="Node2D" unique_id=1386385968]
+script = ExtResource("1_4ignj")
+
+[node name="Control" type="Control" parent="." unique_id=1662243748]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -22.0
+offset_top = -24.0
+offset_right = 1170.0
+offset_bottom = 661.0
+
+[node name="Panel" type="Panel" parent="Control" unique_id=445694410]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 1191.0
+offset_bottom = 696.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cqrfi")
+
+[node name="Label" type="Label" parent="Control" unique_id=806756771]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 169.0
+offset_right = 1179.0
+offset_bottom = 374.0
+theme_override_font_sizes/font_size = 150
+text = "COOL NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control" unique_id=720076512]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 445.0
+offset_right = 749.0
+offset_bottom = 551.0
+theme_override_font_sizes/font_size = 39
+text = "LOGIN"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

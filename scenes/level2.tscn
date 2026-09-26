@@ -1,10 +1,28 @@
 [gd_scene format=3 uid="uid://ctjyr4o2gp3g"]
 
 [ext_resource type="PackedScene" uid="uid://b026ky0nyq225" path="res://scenes/tile1.tscn" id="1_d6fun"]
+[ext_resource type="Script" uid="uid://crn76dhx00pov" path="res://scripts/level.gd" id="2_if4l3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6fun"]
+size = Vector2(194, 62)
 
 [node name="Level2" type="Node2D" unique_id=1110251530]
+script = ExtResource("2_if4l3")
+
+[node name="enemies" type="Node2D" parent="." unique_id=503445073]
+
+[node name="coins" type="Node2D" parent="." unique_id=998389325]
+
+[node name="spawn" type="Marker2D" parent="." unique_id=1026753158]
+position = Vector2(601, 355)
+
+[node name="end" type="Area2D" parent="." unique_id=506540094]
+position = Vector2(1925, 401)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="end" unique_id=937593398]
+position = Vector2(18, -18)
+shape = SubResource("RectangleShape2D_d6fun")
 
 [node name="Tiles" parent="." unique_id=955182349 instance=ExtResource("1_d6fun")]
 
-[node name="spawn" type="Marker2D" parent="." unique_id=1445282643]
-position = Vector2(619, 348)
+[connection signal="body_entered" from="end" to="." method="_on_end_body_entered"]
