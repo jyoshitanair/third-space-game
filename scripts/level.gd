@@ -8,10 +8,12 @@ var player = preload("res://scenes/player.tscn")
 func _ready() -> void:
 	print("LOADING PLATER")
 	var preal = player.instantiate()
+	print(spawn)
 	if Manager.first:
 		get_tree().current_scene.add_child.call_deferred(preal)
 		Manager.first = false
 	else:
+		print("HALLO?")
 		get_tree().current_scene.add_child(preal)
 	preal.global_position = spawn.global_position
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="third-space-game"
-run/main_scene="uid://demosj3mffhpg"
+run/main_scene="uid://djgta5hwejamq"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
