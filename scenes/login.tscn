@@ -1,3 +1,23 @@
 [gd_scene format=3 uid="uid://bt2jgiqpb2np6"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryv3l"]
+bg_color = Color(0.93549204, 0.8957196, 0.99450606, 0.6431373)
+
 [node name="Login" type="Node2D" unique_id=1855685579]
+
+[node name="Panel" type="Panel" parent="." unique_id=314937863]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 1191.0
+offset_bottom = 696.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ryv3l")
+
+[node name="Label" type="Label" parent="." unique_id=484777417]
+offset_left = -2.0
+offset_top = 9.0
+offset_right = 1155.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 100
+text = "Login "
+horizontal_alignment = 1
+vertical_alignment = 1

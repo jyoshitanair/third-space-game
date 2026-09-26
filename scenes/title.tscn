@@ -37,11 +37,21 @@ vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Control" unique_id=720076512]
 layout_mode = 0
-offset_left = 412.0
-offset_top = 445.0
-offset_right = 749.0
-offset_bottom = 551.0
+offset_left = 155.0
+offset_top = 455.0
+offset_right = 492.0
+offset_bottom = 561.0
 theme_override_font_sizes/font_size = 39
 text = "LOGIN"
 
+[node name="Button2" type="Button" parent="Control" unique_id=298307326]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 455.0
+offset_right = 1077.0
+offset_bottom = 561.0
+theme_override_font_sizes/font_size = 39
+text = "Register"
+
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
