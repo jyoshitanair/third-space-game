@@ -1,19 +1,27 @@
 extends CharacterBody2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 250.0
-
-@onready var attack_area: Area2D = $AttackArea
-@onready var sprite: Sprite2D = $Sprite2D
+var state
+@onready var attack_area: Area2D = $attack_area
 var can_attack: bool = true
+var direction
 
 func _physics_process(delta: float) -> void:
-	var direction := Input.get_vector("left", "right", "up", "down")
+	state = "normal"
+	direction = Input.get_vector("left", "right", "up", "down")
 	
 	if direction != Vector2.ZERO:
 		velocity = direction * SPEED
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
-		
+	if direction.x != 0: 
+		state = "walk"
+	if direction.y == 1:
+		state = "up"
+	if direction.y == -1:
+		state = "down"
+	play_animation(state)
 	move_and_slide()
 	
 	if direction.x != 0:
@@ -33,3 +41,5 @@ func attack() -> void:
 func _on_attack_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		area.get_parent().take_damage(1)
+func play_animation(state) -> void: 
+	sprite.play(state)

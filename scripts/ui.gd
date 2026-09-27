@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var health_bar: ProgressBar = $HUD/HealthBar
 @onready var pause_overlay: Control = $PauseMenu
 @onready var resume_btn: Button = $PauseMenu/ResumeButton
+@onready var texture_progress_bar: ProgressBar = $Control/TextureProgressBar
 
 var is_paused: bool = false
 
@@ -16,6 +17,7 @@ func _setup_ui_bindings() -> void:
 		pause_overlay.visible = false
 	if resume_btn and not resume_btn.pressed.is_connected(_on_resume_pressed):
 		resume_btn.pressed.connect(_on_resume_pressed)
+	texture_progress_bar.value = Manager.health
 
 func _connect_game_signals() -> void:
 	var manager = get_node_or_null("/root/Manager")

@@ -7,7 +7,11 @@ var coins: int = 6000
 var cloth1: bool = false
 var cloth2: bool = false
 var pet: bool = false
-
+##NEED TO DO THIS NEXT WEEK!!!
+var level_coins:int = 0
+var c1_enabled:bool = false
+var c2_enabled:bool = false
+var pet_enabled:bool = false
 ## OTHER STUFF
 var first: bool = true
 var paused: bool = false

@@ -19,12 +19,12 @@ func _ready() -> void:
 	print(right)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if player.dirx == 1: 
+	if player.direction.x == 1: 
 		target = left.global_position
-	if player.dirx == -1: 
+	if player.direction.x == -1: 
 		target= right.global_position
-	if player.diry == -1:
+	if player.direction.y == -1:
 		target = up.global_position
-	if player.diry == 1:
+	if player.direction.y == 1:
 		target = down.global_position
 	self.global_position = lerp(self.global_position, target, delta*3)
