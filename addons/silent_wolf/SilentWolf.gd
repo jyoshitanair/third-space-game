@@ -37,13 +37,13 @@ var scores_config = {
 }
 
 var auth_config = {
-	"redirect_to_scene": "res://scenes/Splash.tscn",
-	"login_scene": "res://addons/silent_wolf/Auth/Login.tscn",
-	"email_confirmation_scene": "res://addons/silent_wolf/Auth/ConfirmEmail.tscn",
-	"reset_password_scene": "res://addons/silent_wolf/Auth/ResetPassword.tscn",
-	"session_duration_seconds": 0,
-	"saved_session_expiration_days": 30
-}
+		"redirect_to_scene": "res://scenes/main.tscn",
+		"login_scene": "res://scenes/title.tscn",
+		"email_confirmation_scene": "res://addons/silent_wolf/Auth/ConfirmEmail.tscn",
+		"reset_password_scene": "res://addons/silent_wolf/Auth/ResetPassword.tscn",
+		"session_duration_seconds": 0,
+		"saved_session_expiration_days": 30
+	}
 
 var auth_script = load("res://addons/silent_wolf/Auth/Auth.gd")
 var scores_script = load("res://addons/silent_wolf/Scores/Scores.gd")

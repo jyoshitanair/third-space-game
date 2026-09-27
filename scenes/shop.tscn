@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://bt2jgiqpb2np6"]
+
+[ext_resource type="Script" uid="uid://dhas4mk2xxhtp" path="res://scripts/shop.gd" id="1_lx5au"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryv3l"]
+bg_color = Color(0.93549204, 0.8957196, 0.99450606, 0.6431373)
+
+[sub_resource type="Gradient" id="Gradient_xfvoa"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lx5au"]
+gradient = SubResource("Gradient_xfvoa")
+
+[node name="shop" type="Node2D" unique_id=1855685579]
+script = ExtResource("1_lx5au")
+
+[node name="Panel" type="Panel" parent="." unique_id=314937863]
+offset_left = -749.0
+offset_top = -449.0
+offset_right = 1191.0
+offset_bottom = 696.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ryv3l")
+
+[node name="Label" type="Label" parent="." unique_id=484777417]
+offset_left = -2.0
+offset_top = 9.0
+offset_right = 1155.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 100
+text = "Shop :3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pet" type="Node2D" parent="." unique_id=242005312]
+metadata/_edit_group_ = true
+
+[node name="pet" type="TextureButton" parent="pet" unique_id=1352405314]
+offset_left = 89.0
+offset_top = 156.0
+offset_right = 345.0
+offset_bottom = 220.0
+texture_normal = SubResource("GradientTexture1D_lx5au")
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="pet" unique_id=383963424]
+offset_left = 101.0
+offset_top = 175.0
+offset_right = 141.0
+offset_bottom = 210.0
+text = "Pet! - 1000"
+
+[node name="cloth1" type="Node2D" parent="." unique_id=1287661239]
+position = Vector2(340, -1)
+metadata/_edit_group_ = true
+
+[node name="cloth1" type="TextureButton" parent="cloth1" unique_id=672418009]
+offset_left = 89.0
+offset_top = 156.0
+offset_right = 345.0
+offset_bottom = 220.0
+texture_normal = SubResource("GradientTexture1D_lx5au")
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="cloth1" unique_id=867951458]
+offset_left = 101.0
+offset_top = 175.0
+offset_right = 141.0
+offset_bottom = 210.0
+text = "Cloth1! - 1000"
+
+[node name="cloth2" type="Node2D" parent="." unique_id=1375128678]
+position = Vector2(694, 2)
+metadata/_edit_group_ = true
+
+[node name="cloth2" type="TextureButton" parent="cloth2" unique_id=1647780836]
+offset_left = 89.0
+offset_top = 156.0
+offset_right = 345.0
+offset_bottom = 220.0
+texture_normal = SubResource("GradientTexture1D_lx5au")
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="cloth2" unique_id=778781265]
+offset_left = 101.0
+offset_top = 175.0
+offset_right = 141.0
+offset_bottom = 210.0
+text = "Cloth2! - 1000"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=427213585]
+
+[node name="fail" type="Label" parent="Node2D" unique_id=1028423783]
+visible = false
+offset_left = 459.0
+offset_top = 312.0
+offset_right = 590.0
+offset_bottom = 361.0
+text = "insufficent funds
+"
+
+[node name="pass" type="Label" parent="Node2D" unique_id=2102846578]
+visible = false
+offset_left = 466.0
+offset_top = 360.0
+offset_right = 597.0
+offset_bottom = 409.0
+text = "It worked!"
+
+[node name="Label" type="Label" parent="Node2D" unique_id=2025156734]
+offset_left = 19.0
+offset_top = 23.0
+offset_right = 189.0
+offset_bottom = 92.0
+text = "Coins: 0 "
+
+[node name="alr" type="Label" parent="Node2D" unique_id=970553766]
+visible = false
+offset_left = 475.0
+offset_top = 403.0
+offset_right = 607.0
+offset_bottom = 426.0
+text = "you alr have this "
+
+[node name="Button" type="Button" parent="." unique_id=730875549]
+offset_left = 46.0
+offset_top = 524.0
+offset_right = 216.0
+offset_bottom = 605.0
+text = "Back!"
+
+[connection signal="pressed" from="pet/pet" to="." method="_on_pet_pressed"]
+[connection signal="pressed" from="cloth1/cloth1" to="." method="_on_cloth_1_pressed"]
+[connection signal="pressed" from="cloth2/cloth2" to="." method="_on_cloth_2_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

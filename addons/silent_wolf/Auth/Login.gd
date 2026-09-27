@@ -48,7 +48,6 @@ func hide_processing_label() -> void:
 func _on_LinkButton_pressed() -> void:
 	get_tree().change_scene_to_file(SilentWolf.auth_config.reset_password_scene)
 
-
 func _on_back_button_pressed():
 	print("Back button pressed")
-	get_tree().change_scene_to_file(SilentWolf.auth_config.redirect_to_scene)
+	get_tree().change_scene_to_file(SilentWolf.auth_config.login_scene)

@@ -64,7 +64,7 @@ func registration_failure(error: String) -> void:
 
 
 func _on_BackButton_pressed() -> void:
-	get_tree().change_scene_to_file(SilentWolf.auth_config.redirect_to_scene)
+	get_tree().change_scene_to_file(SilentWolf.auth_config.login_scene)
 
 
 func show_processing_label() -> void:
