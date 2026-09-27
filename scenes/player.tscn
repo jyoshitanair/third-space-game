@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://clv2d8q5xo11o"]
 
 [ext_resource type="Script" uid="uid://dnjgtffhds56y" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://c826et8jrte40" path="res://assets/images/closed-chest.PNG" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://d13405tuiehs7" path="res://assets/images/temp.PNG" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bvwmlvf0ib47w" path="res://assets/images/Illustration 20260927_1.PNG" id="4_qlg0r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rid7q"]
 radius = 103.43
@@ -10,10 +12,26 @@ radius = 103.43
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_dqkch")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_qhqgy")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qlg0r")
+}],
+"loop": 1,
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -43,6 +61,7 @@ text = "This...This is a player."
 position = Vector2(0, 22)
 scale = Vector2(0.16375, 0.15517856)
 sprite_frames = SubResource("SpriteFrames_cqrfi")
+animation = &"jump"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=31007353]
 offset = Vector2(0, 10)
