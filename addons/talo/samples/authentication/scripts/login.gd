@@ -27,6 +27,11 @@ func _on_submit_pressed() -> void:
 			_:
 				validation_label.text = res.error.message
 	else:
+		Talo.current_player.set_prop("coins", "0")
+		Talo.current_player.set_prop("level", "1")
+		Talo.current_player.set_prop("cloth1", "false")
+		Talo.current_player.set_prop("cloth2", "false")
+		Talo.current_player.set_prop("pet", "false")
 		get_tree().change_scene_to_file("res://scenes/title.tscn")
 
 func _on_register_pressed() -> void:
