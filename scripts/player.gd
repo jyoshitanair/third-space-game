@@ -9,20 +9,21 @@ var state = "normal"
 
 func _physics_process(delta: float) -> void:
 	state = "normal"
-	var dirx := Input.get_axis("left", "right")
-	if dirx:
-		velocity.x = dirx * SPEED
-		#moving
-		state = "walk"
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	var diry := Input.get_axis("up", "down")
-	if diry:
-		velocity.y = diry * SPEED
-		state = "jumping"
-	else:
-		velocity.y = move_toward(velocity.x, 0, SPEED)
-	play_animation(state)
-	move_and_slide()
+	if !Manager.paused:
+		var dirx := Input.get_axis("left", "right")
+		if dirx:
+			velocity.x = dirx * SPEED
+			#moving
+			state = "walk"
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+		var diry := Input.get_axis("up", "down")
+		if diry:
+			velocity.y = diry * SPEED
+			state = "up"
+		else:
+			velocity.y = move_toward(velocity.x, 0, SPEED)
+		play_animation(state)
+		move_and_slide()
 func play_animation(state) -> void: 
 	sprite.play(state)

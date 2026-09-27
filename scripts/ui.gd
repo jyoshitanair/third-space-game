@@ -28,6 +28,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	coins.text = "%d coins total \n %d coins this level"%[Manager.coins, Manager.level_coins]
 	texture_progress_bar.value = Manager.health
+	if Manager.health <= 0:
+		print("player died")
 func update_ui() -> void: 
 	var count = Manager.level - 1 #up to level-1
 	for i in range(0,count):

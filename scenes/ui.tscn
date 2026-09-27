@@ -93,6 +93,7 @@ offset_left = 53.0
 offset_top = 183.0
 offset_right = 154.0
 offset_bottom = 214.0
+button_pressed = true
 text = "Music?"
 
 [node name="lev_1" type="Sprite2D" parent="Control/settings" unique_id=114567322]

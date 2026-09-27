@@ -12,18 +12,18 @@ radius = 103.43
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dqkch")
-}],
-"loop": 1,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("2_qhqgy")
 }],
 "loop": 1,
 "name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dqkch")
+}],
+"loop": 1,
+"name": &"up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -61,7 +61,7 @@ text = "This...This is a player."
 position = Vector2(0, 22)
 scale = Vector2(0.16375, 0.15517856)
 sprite_frames = SubResource("SpriteFrames_cqrfi")
-animation = &"jump"
+animation = &"up"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=31007353]
 offset = Vector2(0, 10)
