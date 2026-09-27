@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://xgeh2b4elqed"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bd0jp"]
+bg_color = Color(0.93549204, 0.8957196, 0.99450606, 0.6431373)
+
+[node name="AllLevels" type="Node2D" unique_id=1258938459]
+
+[node name="Panel" type="Panel" parent="." unique_id=923462147]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 1191.0
+offset_bottom = 696.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bd0jp")
+
+[node name="Label" type="Label" parent="." unique_id=216627584]
+offset_left = 17.0
+offset_top = 19.0
+offset_right = 594.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 150
+text = "level"
+horizontal_alignment = 1
+vertical_alignment = 1
