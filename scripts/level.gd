@@ -6,6 +6,8 @@ var player = preload("res://scenes/player.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if self.is_in_group("level1"):
+		Manager.level_coins = 2
 	print("LOADING PLATER")
 	var preal = player.instantiate()
 <<<<<<< Updated upstream

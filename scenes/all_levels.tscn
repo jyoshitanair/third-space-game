@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://xgeh2b4elqed"]
 
+[ext_resource type="PackedScene" uid="uid://clv2d8q5xo11o" path="res://scenes/player.tscn" id="1_7kcbp"]
+[ext_resource type="PackedScene" uid="uid://b35kudbthldfr" path="res://scenes/pet.tscn" id="2_rhcbk"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bd0jp"]
 bg_color = Color(0.93549204, 0.8957196, 0.99450606, 0.6431373)
 
@@ -21,3 +24,7 @@ theme_override_font_sizes/font_size = 150
 text = "level"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Player" parent="." unique_id=1314964327 instance=ExtResource("1_7kcbp")]
+
+[node name="Pet" parent="." unique_id=705019337 instance=ExtResource("2_rhcbk")]
