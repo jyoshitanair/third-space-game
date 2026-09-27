@@ -7,6 +7,10 @@ var cloth1 = false
 var cloth2 = false
 var pet = false
 var level_coins = 0
+##NEED TO DO THIS NEXT WEEK!!!
+var c1_enabled = false
+var c2_enabled = false
+var pet_enabled = false
 ##OTHER STUFF
 var first = true
 var paused = false

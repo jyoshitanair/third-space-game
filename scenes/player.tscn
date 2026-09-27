@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://csipdpcqppdgu" path="res://assets/images/spritesheets/IMG_5035.PNG" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cjpckpoxe1afc" path="res://assets/images/spritesheets/IMG_5034.PNG" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://cte5d1yurn4es" path="res://assets/images/spritesheets/IMG_5037.PNG" id="4_tuyoq"]
+[ext_resource type="PackedScene" uid="uid://b35kudbthldfr" path="res://scenes/pet.tscn" id="5_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bd0jp"]
 size = Vector2(34, 62)
@@ -267,3 +268,18 @@ autoplay = "normal"
 offset = Vector2(0, 10)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="up" type="Marker2D" parent="." unique_id=349567597 groups=["up"]]
+position = Vector2(0, 88.66667)
+
+[node name="down" type="Marker2D" parent="." unique_id=1020101889 groups=["down"]]
+position = Vector2(0, -33.333336)
+
+[node name="left" type="Marker2D" parent="." unique_id=195221036 groups=["left"]]
+position = Vector2(-80.66667, 45.333336)
+
+[node name="right" type="Marker2D" parent="." unique_id=588064815 groups=["right"]]
+position = Vector2(80.66667, 44)
+
+[node name="Pet" parent="." unique_id=705019337 instance=ExtResource("5_qlg0r")]
+position = Vector2(-80.66667, 45.333336)
