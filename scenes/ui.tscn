@@ -38,6 +38,15 @@ texture_hover = SubResource("CompressedTexture2D_yev5y")
 texture_disabled = SubResource("CompressedTexture2D_yev5y")
 texture_focused = SubResource("CompressedTexture2D_yev5y")
 
+[node name="coins" type="Label" parent="Control" unique_id=237141237]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 15.0
+offset_right = 354.0
+offset_bottom = 64.0
+text = "0 coins total
+0 coins this level"
+
 [node name="settings" type="Panel" parent="Control" unique_id=1281773584]
 visible = false
 layout_mode = 0
@@ -111,11 +120,30 @@ position = Vector2(367.28125, 325.5625)
 scale = Vector2(0.14843749, 0.14491421)
 texture = ExtResource("2_x4jx1")
 
+[node name="OptionButton" type="OptionButton" parent="Control/settings" unique_id=1230424555]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 184.0
+offset_right = 365.0
+offset_bottom = 215.0
+selected = 0
+item_count = 5
+popup/item_0/text = "normal"
+popup/item_0/id = 0
+popup/item_1/text = "water"
+popup/item_1/id = 1
+popup/item_2/text = "underwater"
+popup/item_2/id = 2
+popup/item_3/text = "loop"
+popup/item_3/id = 3
+popup/item_4/text = "vocaloid"
+popup/item_4/id = 4
+
 [node name="Label" type="Label" parent="Control" unique_id=2105560177]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 76.0
-offset_right = 249.0
+offset_right = 169.0
 offset_bottom = 99.0
 text = "NAME"
 
@@ -124,3 +152,4 @@ text = "NAME"
 [connection signal="pressed" from="Control/settings/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/settings/shiop" to="." method="_on_shiop_pressed"]
 [connection signal="toggled" from="Control/settings/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="item_selected" from="Control/settings/OptionButton" to="." method="_on_option_button_item_selected"]

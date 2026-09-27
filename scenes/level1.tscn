@@ -2,16 +2,26 @@
 
 [ext_resource type="Script" uid="uid://crn76dhx00pov" path="res://scripts/level.gd" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://b026ky0nyq225" path="res://scenes/tile1.tscn" id="2_w8frs"]
+[ext_resource type="PackedScene" uid="uid://b5tpdp12354k4" path="res://scenes/coin.tscn" id="3_m7ahb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqrfi"]
-size = Vector2(194, 62)
+size = Vector2(113, 113)
 
-[node name="Level_1" type="Node2D" unique_id=883058062]
+[node name="Level_1" type="Node2D" unique_id=883058062 groups=["level1"]]
 script = ExtResource("1_w7c3h")
+
+[node name="Tiles" parent="." unique_id=955182349 instance=ExtResource("2_w8frs")]
+position = Vector2(49, 143)
 
 [node name="enemies" type="Node2D" parent="." unique_id=1199411064]
 
 [node name="coins" type="Node2D" parent="." unique_id=433724031]
+
+[node name="Coin" parent="coins" unique_id=1479169648 instance=ExtResource("3_m7ahb")]
+position = Vector2(-561, 542)
+
+[node name="Coin2" parent="coins" unique_id=3406040 instance=ExtResource("3_m7ahb")]
+position = Vector2(456, 362)
 
 [node name="spawn" type="Marker2D" parent="." unique_id=166996118]
 position = Vector2(100, 200)
@@ -20,9 +30,7 @@ position = Vector2(100, 200)
 position = Vector2(1925, 401)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="end" unique_id=1999735837]
-position = Vector2(18, -18)
+position = Vector2(116.5, 389.5)
 shape = SubResource("RectangleShape2D_cqrfi")
-
-[node name="Tiles" parent="." unique_id=955182349 instance=ExtResource("2_w8frs")]
 
 [connection signal="body_entered" from="end" to="." method="_on_end_body_entered"]

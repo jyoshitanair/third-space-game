@@ -3,6 +3,7 @@ extends Node2D
 @onready var pro: Node2D = $Control/pro
 @onready var label: Label = $Control/pro/Label
 @onready var i_tink: Label = $Label
+@onready var play: Button = $Control/pro/play
 
 func _ready() -> void:
 	Talo.players.identified.connect(_on_player_identified)
@@ -12,6 +13,7 @@ func _ready() -> void:
 	if Talo.current_alias:
 		_on_player_identified(Talo.current_alias)
 	Talo.player_auth.start_session()
+	play.disabled = true
 func _on_verified() -> void: 
 	pro.show()
 	i_tink.hide()
@@ -33,6 +35,8 @@ func _on_player_identified(player_alias: TaloPlayerAlias) -> void:
 	print("cloth2", cloth2)
 	print("coins", coins)
 	Manager.namey = player_alias.identifier
+	Manager.coins = int(coins)
+	play.disabled = false
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://addons/talo/samples/authentication/states/login.tscn")
 func _on_button_2_pressed() -> void:
