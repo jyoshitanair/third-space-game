@@ -15,12 +15,16 @@ func _physics_process(delta: float) -> void:
 			velocity.x = dirx * SPEED
 			#moving
 			state = "walk"
+			sprite.flip_h = true if dirx <0 else false
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		var diry := Input.get_axis("up", "down")
 		if diry:
 			velocity.y = diry * SPEED
-			state = "up"
+			if diry == -1:
+				state = "down"
+			else:
+				state = "up"
 		else:
 			velocity.y = move_toward(velocity.x, 0, SPEED)
 		play_animation(state)
