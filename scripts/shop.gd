@@ -31,7 +31,7 @@ func _on_pet_pressed() -> void:
 	if Manager.coins >=1000 && !Manager.pet:
 		passer.show()
 		Manager.coins -= 1000
-		Manager.pet = true
+		Manager._pet_got()
 	else:
 		if Manager.pet:
 			alr.show()
@@ -41,7 +41,7 @@ func _on_cloth_1_pressed() -> void:
 	if Manager.coins >= 1000 && !Manager.cloth1:
 		passer.show()
 		Manager.coins -= 1000
-		Manager.cloth1 = true
+		Manager._cloth1_got()
 	else:
 		if Manager.cloth1:
 			alr.show()
@@ -52,7 +52,7 @@ func _on_cloth_2_pressed() -> void:
 	if Manager.coins >=1000 && !Manager.cloth2:
 		passer.show()
 		Manager.coins -= 1000
-		Manager.cloth2 = true
+		Manager._cloth2_got()
 	else:
 		if Manager.cloth2:
 			alr.show()
