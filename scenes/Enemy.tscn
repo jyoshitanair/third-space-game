@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dd4mm0dm0l8nn"]
+
+[ext_resource type="Script" uid="uid://c8oru11kr4bdc" path="res://scenes/enemy.gd" id="1_55jtl"]
+[ext_resource type="Texture2D" uid="uid://dkbu4n6vmi3xu" path="res://assets/0x72_DungeonTilesetII_v1.7/frames/big_demon_run_anim_f0.png" id="2_mpr68"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v4oso"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6jgir"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yxbtn"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1992134713]
+script = ExtResource("1_55jtl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1864269114]
+texture = ExtResource("2_mpr68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1187852337]
+shape = SubResource("CircleShape2D_v4oso")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1264474873]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=127235386]
+shape = SubResource("CircleShape2D_6jgir")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1507681740 groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1092899701]
+shape = SubResource("CircleShape2D_yxbtn")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

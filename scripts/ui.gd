@@ -1,34 +1,52 @@
 extends CanvasLayer
 
-@onready var texture_button: TextureButton = $Control/TextureButton
-@onready var texture_progress_bar: ProgressBar = $Control/TextureProgressBar
-@onready var settings: Panel = $Control/settings
-@onready var button: Button = $Control/settings/Button
+@onready var coin_label: Label = $HUD/CoinLabel
+@onready var health_bar: ProgressBar = $HUD/HealthBar
+@onready var pause_overlay: Control = $PauseMenu
+@onready var resume_btn: Button = $PauseMenu/ResumeButton
 
-# Called when the node enters the scene tree for the first time.
+var is_paused: bool = false
+
 func _ready() -> void:
-	texture_progress_bar.min_value = 0
-	texture_progress_bar.max_value = 100
-	texture_progress_bar.value = 100
-	settings.visible = false
-	SilentWolf.Auth.sw_logout_complete.connect(_on_logout_complete)
+	_setup_ui_bindings()
+	_connect_game_signals()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	texture_progress_bar.value = Manager.health
-	if Manager.health <= 0:
-		print("player died")
+func _setup_ui_bindings() -> void:
+	if pause_overlay:
+		pause_overlay.visible = false
+	if resume_btn and not resume_btn.pressed.is_connected(_on_resume_pressed):
+		resume_btn.pressed.connect(_on_resume_pressed)
 
-func _on_logout_complete(a, b):
-	print("logging out!")
-	get_tree().change_scene_to_file("res://scenes/title.tscn")
+func _connect_game_signals() -> void:
+	var manager = get_node_or_null("/root/Manager")
+	if manager:
+		if manager.has_signal("coins_updated"):
+			manager.coins_updated.connect(_update_coin_display)
+		if manager.has_method("get_coins"):
+			_update_coin_display(manager.get_coins())
 
-func _on_texture_button_toggled(toggled_on: bool) -> void:
-	settings.visible = toggled_on
-	Manager.paused = toggled_on
-	get_tree().paused = toggled_on
-	print("clicky")
-	button.disabled = !toggled_on
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("pause"):
+		toggle_pause_menu()
 
-func _on_button_pressed() -> void:
-	SilentWolf.Auth.logout_player()
+func toggle_pause_menu() -> void:
+	is_paused = not is_paused
+	get_tree().paused = is_paused
+	if pause_overlay:
+		pause_overlay.visible = is_paused
+
+func _on_resume_pressed() -> void:
+	toggle_pause_menu()
+
+func _update_coin_display(new_total: int) -> void:
+	if coin_label:
+		coin_label.text = "Coins: " + str(new_total)
+
+func update_health(new_health: int) -> void:
+	if health_bar:
+		health_bar.value = clamp(new_health, 0, 100)
+
+func _on_sound_toggle_toggled(button_pressed: bool) -> void:
+	var manager = get_node_or_null("/root/Manager")
+	if manager and "on" in manager:
+		manager.on = button_pressed
