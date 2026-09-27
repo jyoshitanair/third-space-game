@@ -6,10 +6,10 @@ func _ready() -> void:
 	SilentWolf.Auth.auto_login_player()
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://addons/silent_wolf/Auth/Login.tscn")
+	get_tree().change_scene_to_file("res://scenes/login.tscn")
 
 func _on_button_2_pressed() -> void:
-	get_tree().change_scene_to_file("res://addons/silent_wolf/Auth/Register.tscn")
+	get_tree().change_scene_to_file("res://scenes/siginin.tscn")
 func _on_login_complete(sw_result):
 	update_login_state_label()
 func update_login_state_label():

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="third-space-game"
-run/main_scene="uid://demosj3mffhpg"
+run/main_scene="uid://b026ky0nyq225"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Manager="*uid://d3dj4ti7b06x0"
 Secrets="*uid://cpkop7jn11ty3"
 SilentWolf="*uid://cqs5mjrk4ckmn"
+Talo="*uid://bpmdn8oc34pg7"
 
 [display]
 
@@ -28,7 +29,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/silent_wolf/plugin.cfg", "res://addons/talo/plugin.cfg")
 
 [input]
 

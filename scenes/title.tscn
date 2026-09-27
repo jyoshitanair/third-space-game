@@ -54,4 +54,3 @@ theme_override_font_sizes/font_size = 39
 text = "Register"
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]

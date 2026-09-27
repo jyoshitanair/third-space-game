@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://buij5rdiu3n2i"]
+
+[ext_resource type="Script" uid="uid://cxtuhas58xkas" path="res://scripts/signup.gd" id="1_6j5rt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1klmq"]
+bg_color = Color(0.93549204, 0.8957196, 0.99450606, 0.6431373)
+
+[node name="signup" type="Node2D" unique_id=1942117124]
+script = ExtResource("1_6j5rt")
+
+[node name="Control" type="Control" parent="." unique_id=584829222]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -22.0
+offset_top = -24.0
+offset_right = 1170.0
+offset_bottom = 661.0
+
+[node name="Panel" type="Panel" parent="Control" unique_id=607175084]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 1191.0
+offset_bottom = 696.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1klmq")
+
+[node name="Label" type="Label" parent="Control" unique_id=2065338163]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -14.0
+offset_right = 1164.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 70
+text = "login"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="login" type="Button" parent="Control" unique_id=962442427]
+layout_mode = 0
+offset_left = 934.0
+offset_top = 599.0
+offset_right = 1153.0
+offset_bottom = 661.0
+theme_override_font_sizes/font_size = 39
+text = "LOGIN"
+
+[node name="register" type="Button" parent="Control" unique_id=664242588]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 505.0
+offset_right = 762.0
+offset_bottom = 575.0
+theme_override_font_sizes/font_size = 39
+text = "Register"
+
+[node name="username" type="TextEdit" parent="Control" unique_id=1991776274]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 197.0
+offset_right = 692.0
+offset_bottom = 271.0
+placeholder_text = "enter name"
+
+[node name="password" type="TextEdit" parent="Control" unique_id=281618225]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 321.0
+offset_right = 702.0
+offset_bottom = 389.0
+text = "enter password"
+
+[node name="Label2" type="Label" parent="Control" unique_id=38519454]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 407.0
+offset_right = 413.0
+offset_bottom = 496.0
+
+[connection signal="pressed" from="Control/register" to="." method="_on_register_pressed"]

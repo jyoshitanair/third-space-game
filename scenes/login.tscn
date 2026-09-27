@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bn8jjd1fovt87"]
+
+[ext_resource type="Script" uid="uid://dhas4mk2xxhtp" path="res://scripts/shop.gd" id="1_pymad"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pymad"]
+bg_color = Color(0.93549204, 0.8957196, 0.99450606, 0.6431373)
+
+[node name="login" type="Node2D" unique_id=1855685579]
+script = ExtResource("1_pymad")
+
+[node name="Control" type="Control" parent="." unique_id=1592694113]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -22.0
+offset_top = -24.0
+offset_right = 1170.0
+offset_bottom = 661.0
+
+[node name="Panel" type="Panel" parent="Control" unique_id=990113304]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 1191.0
+offset_bottom = 696.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pymad")
+
+[node name="Label" type="Label" parent="Control" unique_id=392909436]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -14.0
+offset_right = 1164.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 70
+text = "login"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control" unique_id=1424005480]
+layout_mode = 0
+offset_left = 923.0
+offset_top = 573.0
+offset_right = 1142.0
+offset_bottom = 635.0
+theme_override_font_sizes/font_size = 39
+text = "LOGIN"
+
+[node name="Button2" type="Button" parent="Control" unique_id=954141603]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 462.0
+offset_right = 761.0
+offset_bottom = 532.0
+theme_override_font_sizes/font_size = 39
+text = "Register"
+
+[node name="username" type="TextEdit" parent="Control" unique_id=860886215]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 197.0
+offset_right = 692.0
+offset_bottom = 271.0
+placeholder_text = "enter name"
+
+[node name="password" type="TextEdit" parent="Control" unique_id=1339796991]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 321.0
+offset_right = 702.0
+offset_bottom = 389.0
+text = "enter password"

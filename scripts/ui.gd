@@ -8,18 +8,18 @@ func _ready() -> void:
 	texture_progress_bar.min_value = 0
 	texture_progress_bar.max_value = 100
 	texture_progress_bar.value = 100
-	SilentWolf.Auth.sw_logout_complete.connect(_on_logout_complete)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	texture_progress_bar.value = Manager.health
-func _on_logout_complete(a,b):
-	print("logging out!")
 func _on_texture_button_toggled(toggled_on: bool) -> void:
 	settings.visible = toggled_on
 	Manager.paused = toggled_on 
 	print("clicky")
 	button.disabled = !toggled_on
 
-
 func _on_button_pressed() -> void:
-	SilentWolf.Auth.logout_player()
+	print("log out")
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	Manager.on = toggled_on
