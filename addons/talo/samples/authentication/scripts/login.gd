@@ -20,17 +20,14 @@ func _on_submit_pressed() -> void:
 		return
 
 	var res := await Talo.player_auth.login(username.text, password.text)
-	if res.verification_required:
-		verification_required.emit()
-	elif not res.success:
+	if not res.success:
 		match res.error.code:
 			TaloPlayerAuthError.ErrorCode.INVALID_CREDENTIALS:
 				validation_label.text = "Username or password is incorrect"
 			_:
 				validation_label.text = res.error.message
-
-func _on_forgot_password_pressed() -> void:
-	go_to_forgot_password.emit()
+	else:
+		get_tree().change_scene_to_file("res://scenes/title.tscn")
 
 func _on_register_pressed() -> void:
-	go_to_register.emit()
+	get_tree().change_scene_to_file("res://addons/talo/samples/authentication/states/register.tscn")

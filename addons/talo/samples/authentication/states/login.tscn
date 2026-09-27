@@ -17,6 +17,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 105.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0.160784, 0.215686, 1)
@@ -26,6 +27,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 40
@@ -68,13 +70,6 @@ size_flags_horizontal = 4
 theme = ExtResource("2_77km8")
 text = "Submit"
 
-[node name="ForgotPassword" type="Button" parent="UI/MarginContainer/VBoxContainer" unique_id=638541930]
-custom_minimum_size = Vector2(200, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_77km8")
-text = "Forgot password"
-
 [node name="Register" type="Button" parent="UI/MarginContainer/VBoxContainer" unique_id=328032725]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
@@ -89,5 +84,4 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [connection signal="pressed" from="UI/MarginContainer/VBoxContainer/Submit" to="." method="_on_submit_pressed"]
-[connection signal="pressed" from="UI/MarginContainer/VBoxContainer/ForgotPassword" to="." method="_on_forgot_password_pressed"]
 [connection signal="pressed" from="UI/MarginContainer/VBoxContainer/Register" to="." method="_on_register_pressed"]

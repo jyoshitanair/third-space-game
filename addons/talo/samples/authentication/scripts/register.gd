@@ -4,8 +4,6 @@ signal go_to_login
 
 @onready var username: TextEdit = %Username
 @onready var password: TextEdit = %Password
-@onready var enable_verification: CheckBox = %EnableVerification
-@onready var email: TextEdit = %Email
 @onready var validation_label: Label = %ValidationLabel
 
 func _on_submit_button_pressed() -> void:
@@ -19,11 +17,7 @@ func _on_submit_button_pressed() -> void:
 		validation_label.text = "Password is required"
 		return
 
-	if enable_verification.button_pressed and not email.text:
-		validation_label.text = "Email is required when verification is enabled"
-		return
-
-	var res := await Talo.player_auth.register(username.text, password.text, email.text, enable_verification.button_pressed)
+	var res := await Talo.player_auth.register(username.text, password.text, "", false)
 	if not res.success:
 		match res.error.code:
 			TaloPlayerAuthError.ErrorCode.IDENTIFIER_TAKEN:
@@ -32,6 +26,8 @@ func _on_submit_button_pressed() -> void:
 				validation_label.text = "Invalid email address"
 			_:
 				validation_label.text = res.error.message
+	else:
+		get_tree().change_scene_to_file("res://addons/talo/samples/authentication/states/login.tscn")
 
 func _on_login_pressed() -> void:
-	go_to_login.emit()
+	get_tree().change_scene_to_file("res://addons/talo/samples/authentication/states/login.tscn")

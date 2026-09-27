@@ -17,6 +17,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 126.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0.160784, 0.215686, 1)
@@ -26,6 +27,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 94.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 40
@@ -60,22 +62,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_rmohq")
 placeholder_text = "Password"
-
-[node name="EnableVerification" type="CheckBox" parent="UI/MarginContainer/VBoxContainer" unique_id=1920102774]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 2.08165e-12)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_rmohq")
-text = "Enable email verification"
-
-[node name="Email" type="TextEdit" parent="UI/MarginContainer/VBoxContainer" unique_id=1973685906]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_rmohq")
-placeholder_text = "Email address"
 
 [node name="Submit" type="Button" parent="UI/MarginContainer/VBoxContainer" unique_id=1914260204]
 custom_minimum_size = Vector2(200, 40)
